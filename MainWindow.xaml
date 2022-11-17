@@ -1,0 +1,54 @@
+﻿<Window x:Class="FileRename_Move_Copy.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rg="clr-namespace:unvell.ReoGrid;assembly=unvell.ReoGrid"
+    xmlns:local="clr-namespace:FileRename_Move_Copy"
+    mc:Ignorable="d"
+    Title="File Folder Rename">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="Padding" Value="5,5,5,5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="AUTO" />
+                <ColumnDefinition Width="AUTO" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0">
+                <TextBox Name="editPath" Text="" VerticalContentAlignment="Center" />
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1">
+                <CheckBox Name="chkFindSub" VerticalContentAlignment="Center">
+                    하위 포함
+                </CheckBox>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2">
+                <Button Click="btnSetPath_Click" Name="btnSetPath">1. 경로찾기</Button>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="3">
+                <Button Click="btnFileList_Click" Name="btnFileList">2. 파일리스트 뽑기</Button>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="4">
+                <Button Click="btnFolderList_Click" Name="btnFolderList">3. 폴더리스트 뽑기</Button>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="5">
+                <Button Click="btnRename_Click" Name="btnRename">4. 이름변경시작!</Button>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1">
+            <rg:ReoGridControl x:Name="grid"></rg:ReoGridControl>
+        </Grid>
+    </Grid>
+</Window>
